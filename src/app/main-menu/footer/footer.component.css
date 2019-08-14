@@ -1,0 +1,44 @@
+footer.footer_wrap{
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.31);
+  color: #000000;
+}
+
+p>span.ad_np{
+  padding-left:0;
+  border-right: 1px solid black;
+}
+
+p>span.ad_nnp{
+  padding-left:0;
+}
+
+span.ad_nbg{
+  background:none;
+  border-right: none;
+}
+
+p{
+  font-size:13px;
+}
+p>span{
+  font-size:13px;
+  line-height:2.2;
+  padding-right:15px;
+  padding-left:10px;
+}
+
+p>span.ad_np{
+  padding-left:0;
+}
+
+p>span.ad_nbg{
+  background:none;
+}
+
+small{
+  font-size:12px;
+  font-family:'arial', sans-serif;
+}
+
+

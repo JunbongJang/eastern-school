@@ -1,0 +1,231 @@
+<!--https://freefrontend.com/css-menu/-->
+<!--https://codepen.io/azouaoui-med/pen/wpBadb-->
+<div class="page-wrapper chiller-theme toggled">
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a href="javascript:void(0)">Reading Adventure</a>
+        <div id="close-sidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="sidebar-header">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+               alt="User picture">
+        </div>
+        <div class="user-info">
+          <span class="user-name">
+            {{ this.userService.jindo.user_id }}
+          </span>
+          <span class="user-role">student</span>
+          <span class="user-status">
+            <i class="fa fa-circle"></i>
+            <span>Online</span>
+          </span>
+        </div>
+      </div>
+      <!-- sidebar-header  -->
+      <div class="sidebar-menu">
+        <ul>
+          <li class="header-menu">
+            <span>Menu</span>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="javascript:void(0)">
+              <i class="fas fa-school"></i>
+              <span>학원</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="javascript:void(0)">Reading Adventure
+                    <span class="badge badge-pill badge-success">Here</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Touch Stone
+                    <span class="badge badge-pill badge-warning">New</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://easternschool.co.kr/readingpark/reading_vocabulary.php">Focus On Reading</a>
+                </li>
+                <li>
+                  <a href="https://easternschool.co.kr/little_genius/">Joyful Reading</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="sidebar-dropdown active">
+            <a href="javascript:void(0)">
+              <i class="fas fa-pencil-alt"></i>
+              <span>학습</span>
+            </a>
+            <div class="sidebar-submenu" style="display:block;">
+              <ul>
+                <li>
+                  <a class="close-sidebar" (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_STUDY, this.viewStateService.STUDY_VOCAB)">Vocabulary
+                    <span [hidden]="this.viewStateService.view_state_sub != this.viewStateService.STUDY_VOCAB" class="badge badge-pill badge-success">Here</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="close-sidebar" (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_STUDY, this.viewStateService.STUDY_STORY)">Storybook
+                    <span [hidden]="this.viewStateService.view_state_sub != this.viewStateService.STUDY_STORY" class="badge badge-pill badge-success">Here</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="close-sidebar" (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_STUDY, this.viewStateService.STUDY_LISTEN)">Listening
+                    <span [hidden]="this.viewStateService.view_state_sub != this.viewStateService.STUDY_LISTEN" class="badge badge-pill badge-success">Here</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="close-sidebar" (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_STUDY, this.viewStateService.STUDY_GRAMMAR)">Grammar
+                    <span [hidden]="this.viewStateService.view_state_sub != this.viewStateService.STUDY_GRAMMAR" class="badge badge-pill badge-success">Here</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="close-sidebar" (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_STUDY, this.viewStateService.STUDY_SPEAK)">Speaking
+                    <span [hidden]="this.viewStateService.view_state_sub != this.viewStateService.STUDY_SPEAK" class="badge badge-pill badge-success">Here</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="close-sidebar" (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_STUDY, this.viewStateService.STUDY_FINAL)">Final Test
+                    <span [hidden]="this.viewStateService.view_state_sub != this.viewStateService.STUDY_FINAL" class="badge badge-pill badge-success">Here</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="javascript:void(0)">
+              <i class="fas fa-home"></i>
+              <span>우리집</span>
+<!--              <span class="badge badge-pill badge-danger">3</span>-->
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_MYHOUSE, 'myroom')">My Room</a>
+                </li>
+                <li>
+                  <a (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_MYHOUSE, 'myclass')">My Classroom</a>
+                </li>
+                <li>
+                  <a (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_MYHOUSE, 'jindo')">학습현황표</a>
+                </li>
+                <li>
+                  <a (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_MYHOUSE, 'bus')">셔틀버스 운행정보</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="javascript:void(0)">
+              <i class="far fa-gem"></i>
+              <span>명예의 전당</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_BEST, 'student')">베스트학생</a>
+                </li>
+                <li>
+                  <a (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_BEST, 'academy')">베스트학원</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="javascript:void(0)">
+              <i class="fa fa-chart-line"></i>
+              <span>테스트</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a class="close-sidebar" (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_TEST, 'intro')">입회테스트</a>
+                </li>
+                <li>
+                  <a class="close-sidebar" (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_TEST, 'levelup')">승급테스트</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="javascript:void(0)">
+              <i class="fa fa-globe"></i>
+              <span>게시판</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_INFO, 'news')">뉴스 & 공지사항</a>
+                </li>
+                <li>
+                  <a (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_INFO, 'survey')">설문</a>
+                </li>
+                <li>
+                  <a (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_INFO, 'discussion')">자유게시판</a>
+                </li>
+                <li>
+                  <a (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_INFO, 'faq')">자주하는 질문</a>
+                </li>
+                <li>
+                  <a (click)="viewStateChooseType(this.viewStateService.MAIN_MENU_INFO, 'ask')">물어보세요</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="header-menu">
+            <span>Extra</span>
+          </li>
+          <li>
+            <a (click)="notImplementedWarning()">
+              <i class="fa fa-book"></i>
+              <span>Help</span>
+              <span class="badge badge-pill badge-primary">Beta</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- sidebar-menu  -->
+    </div>
+    <!-- sidebar-content  -->
+    <div class="sidebar-footer">
+      <a href="javascript:void(0)" (click)="notImplementedWarning()">
+        <i class="fa fa-bell"></i>
+        <span class="badge badge-pill badge-warning notification">3</span>
+      </a>
+      <a href="javascript:void(0)" (click)="notImplementedWarning()">
+        <i class="fa fa-envelope"></i>
+        <span class="badge badge-pill badge-success notification">7</span>
+      </a>
+      <a href="javascript:void(0)" (click)="notImplementedWarning()">
+        <i class="fa fa-cog"></i>
+        <span class="badge-sonar"></span>
+      </a>
+      <a class="close-sidebar" href="javascript:void(0)">
+        <i class="fa fa-power-off"></i>
+      </a>
+    </div>
+  </nav>
+  <!-- sidebar-wrapper  -->
+
+  <main class="page-content main_background">
+
+      <app-header></app-header>
+      <div class="container mb-5">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer></app-footer>
+
+  </main>
+  <!-- page-content" -->
+</div>
+<!-- page-wrapper -->
+
+
+
+

@@ -1,0 +1,134 @@
+.navbar-button {
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: #814f1d;
+}
+
+.nav_study_logo {
+  height: 64px;
+}
+
+/*https://codepen.io/matchboxhero/pen/RLebOY?editors=1100*/
+/*https://fournier-pere-fils.com/home*/
+.entire-bird-container {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 6rem;
+}
+
+.bird-container {
+  position: absolute;
+  left: -10%;
+  top: -2rem;
+  transform: scale(0) translateX(-10vw);
+  will-change: transform;
+
+  animation-name: moving-bird;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-delay: -0.5s;
+}
+
+.bird-container--one {
+  animation-duration: 4s;
+  animation-delay: 0;
+}
+
+.bird-container--two {
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+
+@keyframes moving-bird {
+  0% {
+    transform: scale(0.3) translateY(5vh) translateX(-10vw);
+  }
+
+  17% {
+    transform: translateY(5vh) translateX(10vw) scale(0.4);
+  }
+
+  34% {
+    transform: translateY(3vh) translateX(30vw) scale(0.4);
+  }
+
+  51% {
+    transform: translateY(2vh) translateX(50vw) scale(0.5);
+  }
+
+  68% {
+    transform: translateY(2vh) translateX(70vw) scale(0.5);
+  }
+
+  85% {
+    transform: translateY(-1vh) translateX(90vw) scale(0.5);
+  }
+
+  100% {
+    transform: translateY(-1vh) translateX(110vw) scale(0.5);
+  }
+}
+
+.bird {
+  background-image: url("../../../assets/img/bird.svg");
+  background-size: auto 100%;
+  width: 88px;
+  height: 125px;
+  will-change: background-position;
+
+  animation-name: fly-cycle;
+  animation-timing-function: steps(10);
+  animation-iteration-count: infinite;
+}
+
+.bird--one {
+  animation-duration: 1s;
+  animation-delay: -0.5s;
+}
+.bird--two {
+  animation-duration: .9s;
+  animation-delay: -0.75s;
+}
+
+@keyframes fly-cycle {
+  100% {
+    background-position: -900px 0;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .nav_study_logo {
+    height: 80px;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .bird-container--one {
+    animation-duration: 12s;
+    animation-delay: 0;
+  }
+
+  .bird-container--two {
+    animation-duration: 13s;
+    animation-delay: 1s;
+  }
+
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { }
