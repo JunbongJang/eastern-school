@@ -110,7 +110,11 @@ export class StudyComponent implements OnInit, OnDestroy {
       study_string = study_num.toString(10);
     }
     // if (this.checkMasterPerm()) {
-      popup_url += this.viewStateService.view_state_sub + `/L${this.userService.view_lev}/L${this.userService.view_lev}_${this.userService.view_chap}_${this.displayAbreViewStateSub()}_${study_string}.html`;
+      if (this.displayAbreViewStateSub() === 'te') {
+        popup_url += this.viewStateService.view_state_sub + `/L${this.userService.view_lev}/L${this.userService.view_lev}_${this.userService.view_chap}_final.html`;
+      } else {
+        popup_url += this.viewStateService.view_state_sub + `/L${this.userService.view_lev}/L${this.userService.view_lev}_${this.userService.view_chap}_${this.displayAbreViewStateSub()}_${study_string}.html`;
+      }
       window.open(popup_url, '_blank');   // 1.vocabulary/L1/L1_1_vo_01.html
     // } else {
     //   alert('Finish previous sections first!');
